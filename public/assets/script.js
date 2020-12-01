@@ -1,22 +1,26 @@
 $(document).ready(function() {
-    
-    const newburger = $("#newburger").val()
-    console.log(newburger)
 
-  $(".devour-form").on("submit", function(event) {
-    event.preventDefault();
+  
 
+  // $("#new-burger-form").on("submit", event => {
+  //   event.preventDefault();
+  //   console.log("FORM SUBMITTED");
+  //   console.log($("#newburger").val());
     
-    
-    $(this).children(".burger_id").val();
-    console.log(burger_id);
-    $.ajax({
-      method: "PUT",
-      url: "/burgers/" + burger_id
-    }).then(function(data) {
-      // reload page to display devoured burger in proper column
-      location.reload();
-    });
+  //   //grab the ID of the burger being submitted
+  //   var id = $(this).children(".id").val();
+  //   console.log(id);
 
-  });
+
+  //   $.ajax({
+  //     method: "PUT",
+  //     url: "/api/burgers/" + id
+  //   }).then(data => {
+      
+  //     // reload page
+  //     location.reload();
+  //   });
+
+  // });
+
 });

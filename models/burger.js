@@ -10,7 +10,7 @@ var burger = {
   },
 
   create: function(name, cb) {
-    orm.create("burgers", ["burger_name", "devoured"], [name, false], res=> {
+    orm.create("burgers", ["newburger", "devoured"], [name, false], res=> {
       cb(res);
     });
   },
