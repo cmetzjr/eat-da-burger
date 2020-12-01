@@ -1,0 +1,42 @@
+<div class="container mx-auto">
+  {{!-- top section --}}
+  <header class="row">
+    <div class="col text-center">
+      <h1 class="mb-3">Burgers!</h1>
+      <img src="https://images.unsplash.com/photo-1564362411991-472954b39f56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" width="300 px" alt="burger image">
+    </div>
+  </header>
+
+  <main class="row">
+    {{!-- left hand "undevoured" side --}}
+    <section class="col-md-6">
+      <ul>
+        {{#each burgers}}
+        <li>
+          <p>
+            {{this.id}}. {{this.burger_name}}
+
+            <button data-planid="{{this.id}}" class="delplan">Devour It!</button>
+          </p>
+        </li>
+        {{/each}}
+      </ul>
+    </section>
+
+    {{!-- right hand "devoured" side --}}
+    <section class="col-md-6">
+
+    </section>
+  </main>
+
+  {{!-- bottom section with button and input --}}
+  <section class="row">
+    <form action="/" method="POST">
+      <input type="text" name="newburger" id="newburger">
+      <button type="submit" id="new-burger-button">Create new burger</button>
+    </form>
+  </section>
+
+
+  {{!-- end container --}}
+</div>
