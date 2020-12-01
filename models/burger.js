@@ -10,14 +10,12 @@ var burger = {
   },
 
   create: function(name, cb) {
-    orm.create("burgers", ["newburger", "devoured"], [name, false], res=> {
-      cb(res);
-    });
+    orm.insertOne("burgers", ["burger_name", "devoured"], [name, false], cb);
   },
 
   // update: function(id, cb) {
   //   var condition = "id=" + id;
-  //   orm.update("burgers", {devoured: true}, condition, cb);
+  //   orm.updateOne("burgers", {devoured: true}, condition, cb);
   // }
 };
 

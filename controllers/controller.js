@@ -12,13 +12,11 @@ router.get("/", (req, res) => {
 });
 
 // create a new burger. name in req.body, devoured status is false (per burger.js)
-router.post("/api/create", (req, res) => {
+router.post("/burger/create", (req, res) => {
     console.log(req.body)
-    // burger.create(req.body.newburger, (result) => {
+    // burger.create(req.body.burger_name, (result) => {
     //     console.log(result);
-    //     // Send back the ID of the new burger
-    //     res.json({ id: result.insertId });
-    // res.redirect("/");
+    //     res.redirect("/");
     // });
 });
 

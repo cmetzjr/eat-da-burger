@@ -31,8 +31,9 @@
 
   {{!-- bottom section with button and input --}}
   <section class="row">
-    <form action="/api/create" id="new-burger-form" method="POST">
-      <input type="text" name="newburger" id="newburger">
+    {{!-- on submit, run create in burger.js --}}
+    <form action="/burger/create" id="new-burger-form" method="POST">
+      <input type="text" name="burger_name" id="text">
       <button type="submit" id="new-burger-button">Create new burger</button>
     </form>
   </section>
