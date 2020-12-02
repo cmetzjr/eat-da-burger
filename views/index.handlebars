@@ -1,23 +1,23 @@
 <div class="container mx-auto">
   {{!-- top section --}}
   <header class="row">
-    <div class="col text-center">
-      <h1 class="mb-3">Burgers!</h1>
-      <img src="https://images.unsplash.com/photo-1564362411991-472954b39f56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80" width="300 px" alt="burger image">
+    <div class="col text-center mb-5">
+      <h1 class="header-text p-3 mb-3">Burgers!</h1>
+      <img src="/assets/hamburger.jpg" width="400px" alt="hamburger image" class="circle_img">
     </div>
   </header>
 
-  <main class="row">
+  <main class="row mb-5">
     {{!-- left hand "undevoured" side --}}
-    <section class="col-md-6">
-      <ul>
+    <section class="col-md-6  text-center">
+      <ul class="list-unstyled">
         {{#each burgers}}
           {{#unless this.devoured}}
         <li>
           <p>
-            {{this.id}}. {{this.burger_name}}
+            &smashp;{{this.id}}&smashp; {{this.burger_name}}
 
-            <button data-value="{{this.id}}" class="id" type="submit">Devour It!</button>
+            <button class="btn btn-gradient" data-value="{{this.id}}" class="id" type="submit">Devour It!</button>
           </p>
         </li>
         {{/unless}}
@@ -26,13 +26,13 @@
     </section>
 
     {{!-- right hand "devoured" side --}}
-    <section class="col-md-6">
-<ul>
+    <section class="col-md-6 text-center">
+<ul class="list-unstyled">
         {{#each burgers}}
           {{#if this.devoured}}
         <li>
           <p>
-            {{this.id}}. {{this.burger_name}}
+            &smashp;{{this.id}}&smashp; {{this.burger_name}}
           </p>
         </li>
         {{/if}}
@@ -44,9 +44,9 @@
   {{!-- bottom section with button and input --}}
   <section class="row">
     {{!-- on submit, run create in burger.js --}}
-    <form action="/burger/create" id="new-burger-form" method="POST">
+    <form class="mx-auto" action="/burger/create" id="new-burger-form" method="POST">
       <input type="text" name="burger_name" id="text">
-      <button type="submit" id="new-burger-button">Create new burger</button>
+      <button class="btn btn-gradient" type="submit" id="new-burger-button">Create new burger</button>
     </form>
   </section>
 
