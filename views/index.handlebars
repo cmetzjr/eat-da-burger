@@ -12,20 +12,32 @@
     <section class="col-md-6">
       <ul>
         {{#each burgers}}
+          {{#unless this.devoured}}
         <li>
           <p>
             {{this.id}}. {{this.burger_name}}
 
-            <button data-value="{{this.id}}" class="id">Devour It!</button>
+            <button data-value="{{this.id}}" class="id" type="submit">Devour It!</button>
           </p>
         </li>
+        {{/unless}}
         {{/each}}
       </ul>
     </section>
 
     {{!-- right hand "devoured" side --}}
     <section class="col-md-6">
-
+<ul>
+        {{#each burgers}}
+          {{#if this.devoured}}
+        <li>
+          <p>
+            {{this.id}}. {{this.burger_name}}
+          </p>
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
     </section>
   </main>
 
