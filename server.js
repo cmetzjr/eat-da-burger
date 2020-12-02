@@ -7,12 +7,12 @@ var PORT = process.env.PORT || 8080;
 
 app.use(express.static("public"));
 
-var routes = require("./controllers/controller.js");
-app.use(routes);
-
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+var routes = require("./controllers/controller.js");
+app.use(routes);
 
 //setup handlebars
 var exphbs = require("express-handlebars");

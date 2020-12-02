@@ -2,25 +2,20 @@ $(document).ready(function() {
 
   //code for devour button
 
-  // $("#new-burger-form").on("submit", event => {
-  //   event.preventDefault();
-  //   console.log("FORM SUBMITTED");
-  //   console.log($("#burger_name").val());
+  $(".id").on("click", event => {
+    event.preventDefault();
     
-  //   //grab the ID of the burger being submitted
-  //   var id = $(this).children(".id").val();
-  //   console.log(id);
-
-
-  //   $.ajax({
-  //     method: "PUT",
-  //     url: "/api/burgers/" + id
-  //   }).then(data => {
+    //grab the ID of the burger being devoured
+    var id = $(this)[0].activeElement.dataset.value;
+    $.ajax({
+      method: "PUT",
+      url: "/burger/" + id
+    }).then(data => {
       
-  //     // reload page
-  //     location.reload();
-  //   });
+      // reload page
+      location.reload();
+    });
 
-  // });
+  });
 
 });
